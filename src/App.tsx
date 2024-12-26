@@ -26,11 +26,9 @@ const App = () => (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <LanguageProvider>
         <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <div className="min-h-screen bg-background text-foreground">
-              <Navbar />
+          <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+            <Navbar />
+            <main className="container mx-auto px-4">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/products" element={<Products />} />
@@ -43,8 +41,10 @@ const App = () => (
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
               </Routes>
-            </div>
-          </BrowserRouter>
+            </main>
+          </div>
+          <Toaster />
+          <Sonner />
         </TooltipProvider>
       </LanguageProvider>
     </ThemeProvider>
